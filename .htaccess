@@ -567,8 +567,8 @@ FileETag None
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?/$1 [L]
-     RewriteCond %{QUERY_STRING} !no_optipic=
-    RewriteRule "^(.*)\.(jpg|jpeg|png)$" "http://cdn.optipic.io/site-103236/$1.$2" [P]
+    #  RewriteCond %{QUERY_STRING} !no_optipic=
+    # RewriteRule "^(.*)\.(jpg|jpeg|png)$" "http://cdn.optipic.io/site-103236/$1.$2" [P]
 </IfModule>
 
-php_value auto_prepend_file "/home/hkmaocez/harekrishnamandir.org/optipic-cdn-php-main/optipic-cdn-php/auto_prepend_file.php"
+# php_value auto_prepend_file "/home/hkmaocez/harekrishnamandir.org/optipic-cdn-php-main/optipic-cdn-php/auto_prepend_file.php"
