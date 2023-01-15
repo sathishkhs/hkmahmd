@@ -10,13 +10,21 @@
  * 2.0 -> Preloader
  * -----------------------------------------------
 */
+#overlayer {
+	width:100%;
+	height:100%;  
+	position:absolute;
+	z-index:-1;
+	background:rgba(0, 0, 0, 0.612);
+  }
+  
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-  	background-color: #fff;
+  	/* background-color: #fff; */
     z-index: 9999;
 }
 #spinner {
