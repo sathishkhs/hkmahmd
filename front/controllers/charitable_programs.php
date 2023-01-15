@@ -55,6 +55,8 @@ class Charitable_Programs extends MY_Controller
                 $this->festivals_model->data['seva_date'] = $data['seva_date'] = $seva_date = $this->input->post('seva_date');
                 $this->festivals_model->data['seva_name'] = $data['seva_name'] = $seva_name = $this->input->post('seva_name');
                 $this->festivals_model->data['festival'] = $data['festival'] = $festival = $this->input->post('festival');
+                $this->festivals_model->data['tally_head'] = $data['tally_head'] = $tally_head = $this->input->post('tally_head');
+                $this->festivals_model->data['seva_code'] = $data['seva_code'] = $seva_code = $this->input->post('seva_code');
                 $this->festivals_model->data['status'] = 'Attempt';
                 $data['keyId'] = $keyId = $this->config->item('keyId');
                 $str_result = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
