@@ -112,7 +112,6 @@ class Seva_Page extends MY_Controller
             ));
 
             $response = curl_exec($curl);
-            print_R($response);exit;
             curl_close($curl);
         }
             if(!empty($response) && !empty(json_decode($response)->success) && json_decode($response)->success == 1){

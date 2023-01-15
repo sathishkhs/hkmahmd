@@ -5,7 +5,7 @@ $config['description'] = 'Hare Krishna Mandir is run by Hare Krishna Movement Ah
 $config['image'] = 'image/path';
 
 
-    $config['payment_mode'] = 'test';
+    $config['payment_mode'] = 'live';
 
 if($config['payment_mode'] == 'test'){
     //Test Server 
