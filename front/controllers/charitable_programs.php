@@ -40,7 +40,7 @@ class Charitable_Programs extends MY_Controller
             if ($this->form_validation->run() == TRUE){
                 $template_path = $this->programpagewisecontent($slug);
                 $data = $this->data;
-                $data['slug'] = $slug;
+                $data['slug'] =$this->festivals_model->data['page_slug'] =  $slug;
                 $data['table_name'] = $table_name = $this->config->item('table_name');
                 $this->festivals_model->data['full_name'] = $data['full_name'] = $full_name = $this->input->post('full_name');
                 $this->festivals_model->data['country_code'] = $data['country_code'] = $country_code = $this->input->post('country_code');
