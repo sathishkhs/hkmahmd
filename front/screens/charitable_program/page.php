@@ -607,9 +607,9 @@ $(window).load(function() {
 
             
     <?php  
-          $this->festivals_model->data['status'] = 'created';
-          $this->festivals_model->primary_key = array('id' => $order_data['notes']['insert_id']);
-          $this->festivals_model->update($this->config->item('table_name')); ?>
+          // $this->festivals_model->data['status'] = 'created';
+          // $this->festivals_model->primary_key = array('id' => $order_data['notes']['insert_id']);
+          // $this->festivals_model->update($this->config->item('table_name')); ?>
             
     var rzp1 = new Razorpay(options);
     // console.log(rzp1);
