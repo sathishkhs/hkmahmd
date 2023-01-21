@@ -36,7 +36,7 @@ class Blog extends MY_Controller {
         $data['post'] = $data['page_items'] =  $this->blog_model->view_rowdata('blog'); 
         }
         $data['categories'] = $this->blog_model->view_data('blogcategory');
-        $data['posts'] = $this->blog_model->view_posts_limit('blog','3');
+        $data['posts'] = $this->blog_model->view_posts_limit('blog','8');
         $data['authors'] = $this->blog_model->view_result_data('author');
         $data['view_path'] =  'blog/post_details'; 
         $data['scripts'] = array('assets/javascripts/index.js');
@@ -58,7 +58,7 @@ class Blog extends MY_Controller {
         $this->blog_model->primary_key = array('author'=>$author);
         $data['blog'] =  $this->blog_model->getdata('blog'); 
         $data['categories'] = $this->blog_model->view_data('blogcategory');
-        $data['posts'] = $this->blog_model->view_posts_limit('blog');
+        $data['posts'] = $this->blog_model->view_posts_limit('blog','8');
         $data['authors'] = $this->blog_model->view_result_data('author');
         $data['view_path'] =  'blog/posts'; 
         $data['scripts'] = array('assets/javascripts/index.js');
