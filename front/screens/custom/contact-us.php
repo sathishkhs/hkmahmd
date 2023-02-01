@@ -88,34 +88,57 @@
                 <button type="reset" class="btn btn-theme-colored2 text-white text-uppercase mt-10 mb-sm-30 border-left-theme-color-2-4px">Reset</button>
               </div>
             </form>
-       
-            <!-- Contact Form Validation-->
-            <!-- <script>
-              (function($) {
-                $("#contact_form").validate({
-                  submitHandler: function(form) {
-                    var form_btn = $(form).find('button[type="submit"]');
-                    var form_result_div = '#form-result';
-                    $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                    var form_btn_old_msg = form_btn.html();
-                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                    $(form).ajaxSubmit({
-                      dataType:  'json',
-                      success: function(data) {
-                        if( data.status == 'true' ) {
-                          $(form).find('.form-control').val('');
-                        }
-                        form_btn.prop('disabled', false).html(form_btn_old_msg);
-                        $(form_result_div).html(data.message).fadeIn('slow');
-                        setTimeout(function(){ $(form_result_div).fadeOut('slow') }, 6000);
-                      }
-                    });
-                  }
-                });
-              })(jQuery);
-            </script> -->
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+$('#contact_form').validate({
+    rules: {
+        name : "required",
+       
+        email: {
+            required: true,
+            // Specify that email should be validated
+            // by the built-in "email" rule
+            email: true
+          },
+          phone:"required",
+          message: "required"
+    },
+    messages: {
+        name: "Please enter your Name",
+        email: "Please enter your Email",
+        email: "Please enter a valid email address"
+      },
+      submitHandler: function(form) {
+            contact_submit()
+            // form.submit()
+}
+})
+               
+function contact_submit(){
+    //   $('#appointment-form').submit(function(e){
+    //     e.preventDefault();
+        
+        var actionURL = 'index/contact_submit';
+       var data = $('#contact_form').serialize();
+
+        $.ajax({
+              url:actionURL,
+              method:"POST",
+              data:data,
+              success:function(data){
+               console.log(data)
+                      if(data == 1 || data == '1'){
+                    $('#contact_form').html('<h4 style="">Form submission successful. Our support team will get in touch with you please be patience.</h4>')
+                      }else if(data == 0 || data == '0'){
+                        $('#contact_form').html('<h4 style="">Sorry Form submission failed. Please try again.</h4>')
+                      }
+                          }
+                        });
+                        // });
+    }
+    
+      </script>

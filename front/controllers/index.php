@@ -84,42 +84,7 @@ class Index extends MY_Controller {
     
             $this->email->message($html);
            
-            // $q = $this->email->send();
-   
-         
-        // $config['protocol']    = 'mail';
-        // $config['smtp_host']    = 'smtp.office365.com';
-        // $config['smtp_port']    = '587';
-        // $config['smtp_timeout'] = '30';
-        // $config['smtp_user']    = 'contact@harekrishnamandir.org';
-        // $config['smtp_pass']    = 'harekrishna1*';
-        // $config['newline']    = "\r\n";
-        // $config['mailtype'] = 'html';
-        // $config['validation'] = TRUE; 
-        // $config['wordwrap'] = TRUE;      
-        // $this->load->library('email',$config);
-    
-        //   $que =  $this->email->initialize($config);
-        //   $this->email->set_newline("\r\n");  
-        //    print_R($que);
-        //     $this->index_model->data = $this->input->post();
-        //     $this->index_model->data['created_date'] = date('y-m-d');
-        //     if($this->index_model->insert('contact')){
-        //         $this->email->from('contact@harekrishnamandir.org');
-        //         $this->email->to('sathishds94@gmail.com');
-          
-        //         $this->email->subject('Enquiry or Contact Form Submission');
-        //         $message = 'New Contact Form Submission.';
-        //         $message .= '<br> The Contact details are as follows';
-        //         $message .= '<br> Name :'.$this->input->post('name');
-        //         $message .= '<br> Email :'.$this->input->post('email');
-        //         $message .= '<br> Email :'.$this->input->post('phone');
-        //         $message .= '<br> message :'.$this->input->post('message');
-        //         $message .= '<br> Thanks & Regards';
-        //      $this->email->message($message);
-        //       $q = $this->email->send();
-        //       echo $this->email->print_debugger(); 
-        //       print_R($q);
+        
                 if($this->email->send()){
                
                     $res = 1;
@@ -130,10 +95,7 @@ class Index extends MY_Controller {
                
                 header('content-Type:application/json');
                 echo json_encode( $res);
-                exit;
-    
-           
-        
+                exit;   
     }
 
 
