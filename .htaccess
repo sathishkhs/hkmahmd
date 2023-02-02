@@ -235,13 +235,13 @@ AddDefaultCharset utf-8
 
 <IfModule mod_rewrite.c>
    # ensure https
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://harekrishnamandir.org/ [L,R=301]
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-RewriteCond %{HTTP_HOST} www.harekrishnamandir.org
-RewriteRule (.*) https://harekrishnamandir.org/$1 [R=301,L]
+# RewriteCond %{HTTP:X-Forwarded-Proto} !https
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://harekrishnamandir.org/ [L,R=301]
+# # RewriteCond %{HTTP_HOST} !^www\. [NC]
+# # RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# RewriteCond %{HTTP_HOST} www.harekrishnamandir.org
+# RewriteRule (.*) https://harekrishnamandir.org/$1 [R=301,L]
 </IfModule>
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -572,3 +572,6 @@ FileETag None
 </IfModule>
 
 # php_value auto_prepend_file "/home/hkmaocez/harekrishnamandir.org/optipic-cdn-php-main/optipic-cdn-php/auto_prepend_file.php"
+
+
+php_value memory_limit 1024M
