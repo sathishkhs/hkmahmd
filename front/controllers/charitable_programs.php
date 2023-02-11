@@ -28,7 +28,7 @@ class Charitable_Programs extends MY_Controller
             $this->form_validation->set_rules('full_name', 'Full Name', 'required');
             $this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim');
             $this->form_validation->set_rules('phone_number', 'Phone number', 'required|min_length[10]|max_length[10]|numeric');
-            $this->form_validation->set_rules('pan_number', 'Pan Number', 'required|trim|alpha_numeric');
+            $this->form_validation->set_rules('pan_number', 'Pan Number', 'trim|alpha_numeric');
             $this->form_validation->set_rules('amount', 'Amount', 'required|trim|greater_than[499]');
 
             if($_POST['address'] && $_POST['pincode'] && $_POST['city']){
